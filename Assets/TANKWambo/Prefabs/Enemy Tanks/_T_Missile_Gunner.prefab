@@ -1,0 +1,1292 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1226248104855157620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2114936716762037811}
+  m_Layer: 0
+  m_Name: Bullet Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2114936716762037811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226248104855157620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.006, y: 0.727, z: 0}
+  m_LocalScale: {x: 0.46510965, y: 0.46510965, z: 0.46510965}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5118931554359407598}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5601351441204135546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3794378451734686779}
+  - component: {fileID: 4949229843845540152}
+  - component: {fileID: 1559991135683906597}
+  - component: {fileID: 3972943664973322006}
+  m_Layer: 0
+  m_Name: Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3794378451734686779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601351441204135546}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8382344259849635923}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4949229843845540152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601351441204135546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46216fa097ecb754babda0f26d640422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "Every 2 seconds, trigger the actions::\n          select randomly
+    between the following actions:\n              1. spawns prefab _B_MG_Bullet at
+    the position of Bullet Spawner (80%)\n              2. spawns prefab _B_Missile
+    at the position of Missile Spawner (20%)\n          plays sound shoot_sound at
+    volume 1 and at pitch 1\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 1559991135683906597}
+  - delay: 0
+    action: {fileID: 3972943664973322006}
+  startTriggered: 0
+  timeInterval: {x: 2, y: 2}
+--- !u!114 &1559991135683906597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601351441204135546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597b94e489d16984395e6685f78929f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "Select randomly between the following actions:\n  1. spawns prefab
+    _B_MG_Bullet at the position of Bullet Spawner (50%)\n  2. spawns prefab _B_Missile
+    at the position of Missile Spawner (50%)"
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  actions:
+  - action: {fileID: 6794996838582015093}
+    probability: 50
+  - action: {fileID: 7122297464997560719}
+    probability: 50
+--- !u!114 &3972943664973322006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601351441204135546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Plays sound shoot_sound at volume 1 and at pitch 1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  clip: {fileID: 8300000, guid: 9a7412deda79a0c4b9329ec79063ce22, type: 3}
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
+--- !u!1 &8153655488355806727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5118931554359407598}
+  - component: {fileID: 5951707427969504925}
+  - component: {fileID: 6794996838582015093}
+  m_Layer: 0
+  m_Name: Machine Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5118931554359407598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153655488355806727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42, y: 0.791, z: 0}
+  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2114936716762037811}
+  m_Father: {fileID: 8382344259849635923}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5951707427969504925
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153655488355806727}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1663161947
+  m_SortingLayer: 2
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: dbc19a283b6885f47adb004544900cec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 0.24, y: 0.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &6794996838582015093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153655488355806727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3e7a99a4ca9064085e4a2664ef1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Spawns prefab _B_Bullet at the position of Bullet Spawner
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 0}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    percentageCompare: 0
+  prefabObject: {fileID: 2364777538405152176, guid: 5892e275619c948699ffaeee9e65e635, type: 3}
+  spawnPosition: 2
+  targetPosition: {fileID: 2114936716762037811}
+  targetTag: {fileID: 11400000, guid: 754dfd693c5604158853a531c7936935, type: 2}
+  setParent: 0
+--- !u!1 &8222678647813382495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436636054936778534}
+  m_Layer: 0
+  m_Name: Missile Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1436636054936778534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222678647813382495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6637948719602688102}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8382344258456899128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8382344258456899129}
+  m_Layer: 0
+  m_Name: _T_Missile_Gunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8382344258456899129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344258456899128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8382344259849635923}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8382344259849635919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8382344259849635923}
+  - component: {fileID: 8382344259849635922}
+  - component: {fileID: 8382344259849635928}
+  - component: {fileID: 4331166519603452774}
+  - component: {fileID: 8382344259849635924}
+  - component: {fileID: 8382344259849635930}
+  - component: {fileID: 7331987964420859770}
+  - component: {fileID: 5145364035722999637}
+  - component: {fileID: 1944248200517670778}
+  - component: {fileID: 2022718847489011241}
+  - component: {fileID: 3583908226563293081}
+  - component: {fileID: 8382344259849635934}
+  - component: {fileID: 8382344259849635935}
+  - component: {fileID: 7925038626764202867}
+  - component: {fileID: 4670535850476929790}
+  - component: {fileID: 5707328100399272781}
+  - component: {fileID: 2045563982445558601}
+  - component: {fileID: 8580298560298079705}
+  - component: {fileID: 8794431508286960182}
+  - component: {fileID: 7828478512632201664}
+  - component: {fileID: 8821385461746508473}
+  - component: {fileID: 691199020260378656}
+  - component: {fileID: 8795241349527295261}
+  - component: {fileID: 7119718301739843989}
+  - component: {fileID: 6036477173709191314}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8382344259849635923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6637948719602688102}
+  - {fileID: 5118931554359407598}
+  - {fileID: 3794378451734686779}
+  m_Father: {fileID: 8382344258456899129}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8382344259849635922
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1663161947
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: cd6b14c74bbb00848862a689d6181e69, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &8382344259849635928
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!70 &4331166519603452774
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0058913827}
+  m_Size: {x: 1.8571428, y: 1.8571428}
+  m_Direction: 0
+--- !u!114 &8382344259849635924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fc8a1e9dd21634a9cb00402422ec6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 
+  description: 
+  hypertags:
+  - {fileID: 11400000, guid: 037282bf9c2be624db5e4dcee420102a, type: 2}
+  - {fileID: 11400000, guid: 873acfa9a43b94f128407ebe24dffd67, type: 2}
+--- !u!114 &8382344259849635930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b66a51b7fe64c4390ac471b7df316b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When a collision with a bounding volume with tags [Bullet,Explosion]
+    starts:\n          plays sound explosion_sound at volume 1 and at pitch 1\n         
+    destroys this object\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 0
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 8382344259849635934}
+  - delay: 0
+    action: {fileID: 8382344259849635935}
+  isTrigger: 0
+  eventType: 0
+  tags:
+  - {fileID: 11400000, guid: 5dd3ea1295091a146a4601c96116d46b, type: 2}
+  - {fileID: 11400000, guid: 7b6614cbd7549a4409447c67edf9f5f0, type: 2}
+--- !u!114 &7331987964420859770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46216fa097ecb754babda0f26d640422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "Every 2 seconds, trigger the actions::\n          select randomly
+    between the following actions:\n              1. select a random velocity between
+    (-5.00, -5.00) and (-5.00, -5.00) and set it to Body's movement. (33%)\n             
+    2. select a random velocity between (5.00, 5.00) and (5.00, 5.00) and set it
+    to Body's movement. (33%)\n              3.  At 0 seconds, \n                   
+    enables component Body (OkapiKit.MovementRotate) on Body\n                   
+    select a random velocity between (0.00, 0.00) and (0.00, 0.00) and set it to
+    Body's movement.\n           At 2 seconds, \n                    disables component
+    Body (OkapiKit.MovementRotate) on Body\n           (33%)\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 1944248200517670778}
+  startTriggered: 0
+  timeInterval: {x: 2, y: 2}
+--- !u!114 &5145364035722999637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe33e4a0e2979294d8e04d307e34bb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When this object is created:\n          select randomly between
+    the following actions:\n              1. select a random velocity between (-5.00,
+    -5.00) and (-5.00, -5.00) and set it to Body's movement. (33%)\n             
+    2. select a random velocity between (5.00, 5.00) and (5.00, 5.00) and set it
+    to Body's movement. (33%)\n              3.  At 0 seconds, \n                   
+    enables component Body (OkapiKit.MovementRotate) on Body\n                   
+    select a random velocity between (0.00, 0.00) and (0.00, 0.00) and set it to
+    Body's movement.\n           At 2 seconds, \n                    disables component
+    Body (OkapiKit.MovementRotate) on Body\n           (33%)\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 1944248200517670778}
+--- !u!114 &1944248200517670778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597b94e489d16984395e6685f78929f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "Select randomly between the following actions:\n  1. select a random
+    velocity between (-5.00, -5.00) and (-5.00, -5.00) and set it to Body's movement.
+    (33%)\n  2. select a random velocity between (5.00, 5.00) and (5.00, 5.00) and
+    set it to Body's movement. (33%)\n  3.  At 0 seconds, \n          enables component
+    Body (MovementRotate) on Body\n At 2 seconds, \n          disables component
+    Body (MovementRotate) on Body\n (33%)"
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  actions:
+  - action: {fileID: 3583908226563293081}
+    probability: 50
+  - action: {fileID: 2022718847489011241}
+    probability: 50
+  - action: {fileID: 8794431508286960182}
+    probability: 50
+--- !u!114 &2022718847489011241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498532aa2f19d4942a1eb319f65735d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Select a random velocity between (5.00, 5.00) and (5.00, 5.00) and
+    set it to Body's movement.
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  movementComponent: {fileID: 7925038626764202867}
+  rigidBodyComponent: {fileID: 0}
+  changeType: 0
+  operation: 0
+  floatPlatformerOperation: 0
+  percentageValue: {x: 1, y: 1}
+  value: {x: 5, y: 5}
+  axis: 6
+  useRotation: 0
+  useRandom: 0
+  startAngle: 0
+  endAngle: 360
+  speedRange: {x: 0, y: 5}
+  minVelocity: {x: 5, y: 5}
+  maxVelocity: {x: 5, y: 5}
+  clampSpeed: 0
+  clampTo: {x: 0, y: 0}
+  fValue: 0
+  iValue: 0
+--- !u!114 &3583908226563293081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498532aa2f19d4942a1eb319f65735d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Select a random velocity between (-5.00, -5.00) and (-5.00, -5.00)
+    and set it to Body's movement.
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  movementComponent: {fileID: 7925038626764202867}
+  rigidBodyComponent: {fileID: 0}
+  changeType: 0
+  operation: 0
+  floatPlatformerOperation: 0
+  percentageValue: {x: 1, y: 1}
+  value: {x: -5, y: -5}
+  axis: 6
+  useRotation: 0
+  useRandom: 0
+  startAngle: 0
+  endAngle: 360
+  speedRange: {x: 0, y: 5}
+  minVelocity: {x: -5, y: -5}
+  maxVelocity: {x: -5, y: -5}
+  clampSpeed: 0
+  clampTo: {x: 0, y: 0}
+  fValue: 0
+  iValue: 0
+--- !u!114 &8382344259849635934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d16681200cf841a49e1df59f6076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Plays sound explosion_sound at volume 1 and at pitch 1
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  clip: {fileID: 8300000, guid: a3777dde23b2c3349b87729f6fde366d, type: 3}
+  volume: {x: 1, y: 1}
+  pitch: {x: 1, y: 1}
+--- !u!114 &8382344259849635935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e75877c0562c0e49a1475541c319262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Destroys this object
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  target: 0
+  targetObject: {fileID: 0}
+  tags: []
+--- !u!114 &7925038626764202867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84ea3f6d61de144eb7d72234be6e843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 'Single axis movement towards the Up axis of the object, although
+    0 is set to zero!
+
+'
+  description: 
+  axis: 0
+  speed: 0
+--- !u!114 &4670535850476929790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880a5ca005d24084a800be5935ef4bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 'Rotational movement, at 45 degrees per second.
+
+'
+  description: 
+  speed: 45
+  mode: 0
+  inputType: 0
+  rotationAxis: Horizontal
+  rotationButtonPositive: Right
+  rotationButtonNegative: Left
+  rotationKeyPositive: 275
+  rotationKeyNegative: 276
+  rotationAxisX: Horizontal
+  rotationAxisY: Vertical
+  rotationButtonPositiveX: Right
+  rotationButtonNegativeX: Left
+  rotationButtonPositiveY: Up
+  rotationButtonNegativeY: Down
+  rotationKeyPositiveX: 275
+  rotationKeyNegativeX: 276
+  rotationKeyPositiveY: 273
+  rotationKeyNegativeY: 274
+  axisToAlign: 0
+  targetObject: {fileID: 0}
+  targetTag: {fileID: 0}
+  cameraObject: {fileID: 0}
+  cameraTag: {fileID: 0}
+--- !u!114 &5707328100399272781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e9241509df85c44871f6a996f27c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Enables component Body (MovementRotate) on Body
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  target: {fileID: 4670535850476929790}
+  state: 0
+--- !u!114 &2045563982445558601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e9241509df85c44871f6a996f27c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Disables component Body (MovementRotate) on Body
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  target: {fileID: 4670535850476929790}
+  state: 1
+--- !u!114 &8580298560298079705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498532aa2f19d4942a1eb319f65735d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Select a random velocity between (0.00, 0.00) and (0.00, 0.00) and
+    set it to Body's movement.
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  movementComponent: {fileID: 7925038626764202867}
+  rigidBodyComponent: {fileID: 0}
+  changeType: 0
+  operation: 0
+  floatPlatformerOperation: 0
+  percentageValue: {x: 1, y: 1}
+  value: {x: 1, y: 1}
+  axis: 0
+  useRotation: 0
+  useRandom: 0
+  startAngle: 0
+  endAngle: 360
+  speedRange: {x: 100, y: 100}
+  minVelocity: {x: 0, y: 0}
+  maxVelocity: {x: 0, y: 0}
+  clampSpeed: 0
+  clampTo: {x: 0, y: 0}
+  fValue: 0
+  iValue: 0
+--- !u!114 &8794431508286960182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5589b26fd161ed94482bcd3969cd9349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: " At 0 seconds, \n          enables component Body (OkapiKit.MovementRotate)
+    on Body\n          select a random velocity between (0.00, 0.00) and (0.00, 0.00)
+    and set it to Body's movement.\n At 2 seconds, \n          disables component
+    Body (OkapiKit.MovementRotate) on Body\n"
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 5707328100399272781}
+  - delay: 0
+    action: {fileID: 8580298560298079705}
+  - delay: 2
+    action: {fileID: 2045563982445558601}
+--- !u!114 &7828478512632201664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3203f38d4afc6a4283618fa1df06ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When ((ProbeIntersect(Body,[Wall,Destructable]):\n          select
+    a random velocity between (0.00, 0.00) and (0.00, 0.00) and set it to Body's
+    movement.\n          enables component Body (OkapiKit.MovementRotate) on Body\n         
+    disables trigger Body.On Timer\n then, at 4 seconds, \n          disables component
+    Body (OkapiKit.MovementRotate) on Body\n then, at 5 seconds, \n          select
+    a random velocity between (5.00, 5.00) and (5.00, 5.00) and set it to Body's
+    movement.\n then, at 6 seconds, \n          enables trigger Body.On Timer\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 8580298560298079705}
+  - delay: 0
+    action: {fileID: 5707328100399272781}
+  - delay: 0
+    action: {fileID: 8821385461746508473}
+  - delay: 4
+    action: {fileID: 2045563982445558601}
+  - delay: 5
+    action: {fileID: 2022718847489011241}
+  - delay: 6
+    action: {fileID: 691199020260378656}
+  conditions:
+  - negate: 0
+    valueHandler: {fileID: 0}
+    variable: {fileID: 0}
+    valueType: 10
+    tag: {fileID: 0}
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 6036477173709191314}
+    movementPlatformer: {fileID: 0}
+    comparison: 2
+    value: 1
+    percentageCompare: 0
+  elseActions: []
+--- !u!114 &8821385461746508473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c8e5ca8f3d04141b3e3ca48a91ebb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Disables trigger Body.On Timer
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  target: {fileID: 7331987964420859770}
+  state: 1
+--- !u!114 &691199020260378656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c8e5ca8f3d04141b3e3ca48a91ebb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Enables trigger Body.On Timer
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions: []
+  target: {fileID: 7331987964420859770}
+  state: 0
+--- !u!114 &8795241349527295261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3203f38d4afc6a4283618fa1df06ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: "When ((ProbeIntersect(Body,[Wall,Destructable]):\n          disables
+    trigger Body.On Timer\n          select a random velocity between (0.00, 0.00)
+    and (0.00, 0.00) and set it to Body's movement.\n          select a random velocity
+    between (5.00, 5.00) and (5.00, 5.00) and set it to Body's movement.\n then,
+    at 1 seconds, \n          enables trigger Body.On Timer\n"
+  description: 
+  enableTrigger: 1
+  allowRetrigger: 1
+  hasPreconditions: 0
+  preConditions: []
+  actions:
+  - delay: 0
+    action: {fileID: 8821385461746508473}
+  - delay: 0
+    action: {fileID: 8580298560298079705}
+  - delay: 0
+    action: {fileID: 2022718847489011241}
+  - delay: 1
+    action: {fileID: 691199020260378656}
+  conditions:
+  - negate: 0
+    valueHandler: {fileID: 0}
+    variable: {fileID: 0}
+    valueType: 10
+    tag: {fileID: 0}
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 7119718301739843989}
+    movementPlatformer: {fileID: 0}
+    comparison: 2
+    value: 1
+    percentageCompare: 0
+  elseActions: []
+--- !u!114 &7119718301739843989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8696953f8839d49b7b322bdf5b8a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 'Casts a ray the down direction of this object, up to 1,2 units away,
+
+    detecting
+    intersections with objects with tags [Wall,Destructable]'
+  description: 
+  type: 0
+  direction: 1
+  radius: 1
+  minDistance: 0
+  maxDistance: 1.2
+  tags:
+  - {fileID: 11400000, guid: 5009fc6200a650247b168e79eceb4906, type: 2}
+  - {fileID: 11400000, guid: f1bf613cb53582041bf2e99c2eaa77e5, type: 2}
+  targetTransform: {fileID: 0}
+  dirTransform: {fileID: 0}
+  dirTag: {fileID: 11400000, guid: 5009fc6200a650247b168e79eceb4906, type: 2}
+--- !u!114 &6036477173709191314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382344259849635919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8696953f8839d49b7b322bdf5b8a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 'Casts a ray the up direction of this object, up to 1,2 units away,
+
+    detecting
+    intersections with objects with tags [Wall,Destructable]'
+  description: 
+  type: 0
+  direction: 0
+  radius: 1
+  minDistance: 0
+  maxDistance: 1.2
+  tags:
+  - {fileID: 11400000, guid: 5009fc6200a650247b168e79eceb4906, type: 2}
+  - {fileID: 11400000, guid: f1bf613cb53582041bf2e99c2eaa77e5, type: 2}
+  targetTransform: {fileID: 0}
+  dirTransform: {fileID: 0}
+  dirTag: {fileID: 11400000, guid: 5009fc6200a650247b168e79eceb4906, type: 2}
+--- !u!1 &8903819153921639599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6637948719602688102}
+  - component: {fileID: 1369472396497276368}
+  - component: {fileID: 2558784038456974016}
+  - component: {fileID: 7122297464997560719}
+  m_Layer: 0
+  m_Name: Cannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6637948719602688102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903819153921639599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1.4235424, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1436636054936778534}
+  m_Father: {fileID: 8382344259849635923}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1369472396497276368
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903819153921639599}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1663161947
+  m_SortingLayer: 2
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: ac28fb49ceb1d0b499f487919afb17b3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 0.24, y: 0.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &2558784038456974016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903819153921639599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880a5ca005d24084a800be5935ef4bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: 'This object will align its up axis with the direction towards the
+    closest object tagged with Player, at a maximum 100000 degrees per second.
+
+'
+  description: 
+  speed: 100000
+  mode: 3
+  inputType: 0
+  rotationAxis: Mouse X
+  rotationButtonPositive: Right
+  rotationButtonNegative: Left
+  rotationKeyPositive: 275
+  rotationKeyNegative: 276
+  rotationAxisX: RightHorizontal
+  rotationAxisY: RightVertical
+  rotationButtonPositiveX: Right
+  rotationButtonNegativeX: Left
+  rotationButtonPositiveY: Up
+  rotationButtonNegativeY: Down
+  rotationKeyPositiveX: 275
+  rotationKeyNegativeX: 276
+  rotationKeyPositiveY: 273
+  rotationKeyNegativeY: 274
+  axisToAlign: 0
+  targetObject: {fileID: 0}
+  targetTag: {fileID: 11400000, guid: 1e7c9d7a9c88a3b41bc3a78e56999984, type: 2}
+  cameraObject: {fileID: 0}
+  cameraTag: {fileID: 0}
+--- !u!114 &7122297464997560719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903819153921639599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3e7a99a4ca9064085e4a2664ef1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInfo: 1
+  _explanation: Spawns prefab _M_Missile at the position of Bullet Spawner
+  description: 
+  enableAction: 1
+  hasTags: 0
+  actionTags: []
+  hasConditions: 0
+  actionConditions:
+  - negate: 0
+    valueHandler: {fileID: 0}
+    variable: {fileID: 0}
+    valueType: 0
+    tag: {fileID: 0}
+    sourceTransform: {fileID: 0}
+    rigidBody: {fileID: 0}
+    axis: 0
+    probe: {fileID: 0}
+    movementPlatformer: {fileID: 0}
+    comparison: 0
+    value: 0
+    percentageCompare: 0
+  prefabObject: {fileID: 2364777538405152176, guid: f63b2c2ce21344af6949d1ebb45767b3, type: 3}
+  spawnPosition: 2
+  targetPosition: {fileID: 1436636054936778534}
+  targetTag: {fileID: 11400000, guid: 754dfd693c5604158853a531c7936935, type: 2}
+  setParent: 0
