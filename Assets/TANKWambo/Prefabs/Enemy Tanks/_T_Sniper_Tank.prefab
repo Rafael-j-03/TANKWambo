@@ -169,6 +169,8 @@ MonoBehaviour:
 '
   description: 
   speed: {x: 0, y: 0}
+  limitSpeed: 0
+  speedLimit: 100
   useRotation: 0
   turnToDirection: 1
   axisToAlign: 0
@@ -185,6 +187,8 @@ MonoBehaviour:
   horizontalKeyNegative: 276
   verticalKeyPositive: 273
   verticalKeyNegative: 274
+  inertiaEnable: 0
+  inertiaStopTime: 0
 --- !u!114 &757703879895207035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,10 +441,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "If (not (ProbeIntersect(Shoot,[Wall,Destructable]) and Every 3 seconds,
-    trigger the actions::\n          spawns an entity using spawner, but there's
-    no spawner in object!\n          plays sound shoot_sound at volume 1 and at pitch
-    1\n"
+  _explanation: "If (not (ProbeIntersect(Shoot,[Wall,Destructable]) and Every 2 seconds,
+    trigger the actions::\n          spawns prefab _B_Sniper at the position of Bullet
+    Spawner\n          plays sound shoot_sound at volume 1 and at pitch 1\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -465,7 +468,7 @@ MonoBehaviour:
   - delay: 0
     action: {fileID: 757703880140207687}
   startTriggered: 0
-  timeInterval: {x: 3, y: 3}
+  timeInterval: {x: 2, y: 2}
 --- !u!114 &757703880140207686
 MonoBehaviour:
   m_ObjectHideFlags: 0

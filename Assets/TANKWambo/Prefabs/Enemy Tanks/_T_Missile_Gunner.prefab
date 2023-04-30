@@ -80,8 +80,8 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "Every 2 seconds, trigger the actions::\n          select randomly
     between the following actions:\n              1. spawns prefab _B_MG_Bullet at
-    the position of Bullet Spawner (80%)\n              2. spawns prefab _B_Missile
-    at the position of Missile Spawner (20%)\n          plays sound shoot_sound at
+    the position of Bullet Spawner (50%)\n              2. spawns prefab _B_Missile
+    at the position of Missile Spawner (50%)\n          plays sound shoot_sound at
     volume 1 and at pitch 1\n"
   description: 
   enableTrigger: 1
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "Select randomly between the following actions:\n  1. spawns prefab
-    _B_MG_Bullet at the position of Bullet Spawner (50%)\n  2. spawns prefab _B_Missile
-    at the position of Missile Spawner (50%)"
+    _B_Missile at the position of Missile Spawner (100%)"
   description: 
   enableAction: 1
   hasTags: 0
@@ -118,8 +117,6 @@ MonoBehaviour:
   hasConditions: 0
   actionConditions: []
   actions:
-  - action: {fileID: 6794996838582015093}
-    probability: 50
   - action: {fileID: 7122297464997560719}
     probability: 50
 --- !u!114 &3972943664973322006

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2364777538405152186}
   - component: {fileID: 2364777538405152189}
   - component: {fileID: 2364777538405152188}
-  - component: {fileID: 2004497758282177671}
+  - component: {fileID: 2803021594663769236}
   - component: {fileID: 83509944139819021}
   - component: {fileID: 3718626731985741047}
   - component: {fileID: 3172719178892815514}
@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 7254154097235373484}
   - component: {fileID: 1269620800184089644}
   m_Layer: 0
-  m_Name: _B_MG_Bullet
+  m_Name: BettyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingLayerID: 1663161947
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f736454b672b7c3459834fa7651ab465, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5a690c1835314049b5424be275e2aa3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &2004497758282177671
-CapsuleCollider2D:
+--- !u!58 &2803021594663769236
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,9 +133,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
-  m_Size: {x: 0.16, y: 0.3}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.5052007}
+  serializedVersion: 2
+  m_Radius: 0.14092547
 --- !u!114 &83509944139819021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +169,8 @@ MonoBehaviour:
   _explanation: Ricochet Counter
   description: Ricochet Counter
   type: 1
-  currentValue: 2
-  defaultValue: 2
+  currentValue: 1
+  defaultValue: 1
   isInteger: 0
   hasLimits: 1
   minValue: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "Initialize bullet angle, velocity and ricochet counter when it spawns\n----------------\nWhen
     this object is created:\n          select a random angle between 90 and 90 and
-    set the velocity of _B_MG_Bullet's rigid body towards that direction, with a
-    magnitude of 10; angles are relative to the object rotation\n"
+    set the velocity of BettyBullet's rigid body towards that direction, with a magnitude
+    of 10; angles are relative to the object rotation\n"
   description: Initialize bullet angle, velocity and ricochet counter when it spawns
   enableTrigger: 1
   allowRetrigger: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Select a random angle between 90 and 90 and set the velocity of Bullet's
-    rigid body towards that direction, with a magnitude of 10; angles are relative
+  _explanation: Select a random angle between 90 and 90 and set the velocity of BettyBullet's
+    rigid body towards that direction, with a magnitude of 12; angles are relative
     to the object rotation
   description: 
   enableAction: 1
@@ -280,7 +280,7 @@ MonoBehaviour:
   useRandom: 1
   startAngle: 90
   endAngle: 90
-  speedRange: {x: 10, y: 10}
+  speedRange: {x: 12, y: 12}
   minVelocity: {x: 10, y: 10}
   maxVelocity: {x: 10, y: 10}
   clampSpeed: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "If ((_B_MG_Bullet == 0) and When a collision with a bounding volume
+  _explanation: "If ((BettyBullet == 0) and When a collision with a bounding volume
     with tags [Wall] starts:\n          destroys this object\n"
   description: 
   enableTrigger: 1
@@ -422,10 +422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "Ricochet off walls.\n----------------\nIf ((_B_MG_Bullet > 0) and
+  _explanation: "Ricochet off walls.\n----------------\nIf ((BettyBullet >= 1) and
     When a collision with a bounding volume with tags [Wall] starts:\n          plays
     sound ricochet_sound at volume 1 and at pitch 1\n          adds -1 to variable
-    _B_MG_Bullet\n"
+    BettyBullet\n"
   description: Ricochet off walls.
   enableTrigger: 1
   allowRetrigger: 1
@@ -441,8 +441,8 @@ MonoBehaviour:
     axis: 0
     probe: {fileID: 0}
     movementPlatformer: {fileID: 0}
-    comparison: 3
-    value: 0
+    comparison: 4
+    value: 1
     percentageCompare: 0
   actions:
   - delay: 0

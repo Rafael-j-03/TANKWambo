@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2505553534047832978}
   - component: {fileID: 4328605317650299435}
   - component: {fileID: 6538728728006161004}
-  - component: {fileID: -64703860392845428}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -4875,17 +4874,3 @@ MonoBehaviour:
   description: 
   hypertags:
   - {fileID: 11400000, guid: 385188b18282f0e4c82fc89f4bc47ef1, type: 2}
---- !u!114 &-64703860392845428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2505553534047832983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f207591d5e7072b4583debd56754eb47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
-  clip: {fileID: 8300000, guid: a3777dde23b2c3349b87729f6fde366d, type: 3}
